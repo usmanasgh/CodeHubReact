@@ -1,13 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+//import App from './App';
+import Genie from './GenieComponent';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
+/* ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
+  document.getElementById('root')
+); */
+
+// MUA: Calling one 'APP' Component.
+ReactDOM.render(
+  <Genie/>,
   document.getElementById('root')
 );
 
