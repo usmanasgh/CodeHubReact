@@ -26,7 +26,7 @@ import Person from './Person/Person';
 } */
 
 //MUA: Calling Genie in the form of class, Extending react component.
-class App extends Component {
+/* class App extends Component {
   render(){
     return (
       <div className="App">
@@ -35,9 +35,39 @@ class App extends Component {
           <p>
             Building up Codehub React App.
           </p>
-          <Person/>
-          <Person/>
-          <Person/>
+          
+          <person/>
+          <Person name="Humayun" age="20"/>
+          <Person name="Adnan" age="10"/>
+          <Person name="Genie" age="8">My Best Friend.</Person>
+        </header>
+      </div>
+    );
+  }
+} */
+
+//MUA: state is keyword in React, holds the properties and their values.
+class App extends Component {
+  state = {
+    persons: [
+        {name:'Adnan', age:10},
+        {name: 'Humayun', age:20},
+        {name: 'genie', age:8}
+    ]
+}
+  render(){
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Building up Codehub React App.
+          </p>
+          
+          <button>Update Name</button>
+          <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
+          <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
+          <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>My Best Friend.</Person>
         </header>
       </div>
     );
