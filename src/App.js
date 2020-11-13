@@ -36,7 +36,8 @@ class App extends Component {
             Building up Codehub React App.
           </p>
           <Person/>
-          
+          <Person/>
+          <Person/>
         </header>
       </div>
     );

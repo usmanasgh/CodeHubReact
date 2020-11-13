@@ -17,7 +17,10 @@ var ES5Syntax = function ES5() {
 
 
 const person = () => {
-    return <p>I am a person, Using ES6 Syntax here! </p>
+    return <div>
+        <p>Randome Number: {Math.floor(Math.random() * 30)}</p>
+    </div>
+    
 };
 
 export default person;
