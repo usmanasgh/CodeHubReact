@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
-import Genie from './GenieComponent';
+import App from './App';
+//import Genie from './GenieComponent';
+//import Genie from './GenieJSX'
 import reportWebVitals from './reportWebVitals';
 
 /* ReactDOM.render(
@@ -14,7 +15,7 @@ import reportWebVitals from './reportWebVitals';
 
 // MUA: Calling one 'APP' Component.
 ReactDOM.render(
-  <Genie/>,
+  <App/>,
   document.getElementById('root')
 );
 

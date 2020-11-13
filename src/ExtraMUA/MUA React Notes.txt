@@ -1,0 +1,2 @@
+1. Class, cannot be used inside React Components, because it is default keyword in JS.
+    1.1 Instead use "ClassName"
