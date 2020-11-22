@@ -73,6 +73,6 @@ class App extends Component {
     );
   }
 }
-//MUA: Calling different component within current component.
+//MUA: Calling different component within current component..
 
 export default App;
