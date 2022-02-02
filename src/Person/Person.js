@@ -23,6 +23,14 @@ var ES5Syntax = function ES5() {
 }; */
 
 //MUA: Remember anything between the tags will be treated as children. <Person>Children</Person>
+
+// MUA: How to have multiple components or functions in same page????????????????????
+const pakistan = () => {
+    return <div><h5>Paksitan Zindabad!</h5></div>
+};
+// MUA: I am not able to call the above function from other class.
+
+
 const person = (Property) => {
     return <div>
         <p>My name: {Property.name} and age is {Property.age} </p>
@@ -30,4 +38,4 @@ const person = (Property) => {
     </div>  
 };
 
-export default person;
+export default person; // MUA: component/function wont' work without export function.

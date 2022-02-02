@@ -28,8 +28,15 @@ import './App.css';
 
 //MUA: On the 2nd level, For making another HTML Element 'H1', need to call React.createElement();
 class GenieJSX extends Component {
+
+//MUA: Test it later.
+// TestFunction = () => {
+//   return <div><h2>This is test Function from Genie class.</h2></div>
+// }
+
+
   render() {
-    return React.createElement('div',{className:App},React.createElement('h1',null,'Hi this is first JSX Syntax.'));
+    return React.createElement('div',{className: 'Genie'},React.createElement('h1',null,'Hi this is first JSX Syntax.'));
   }
 }
 
