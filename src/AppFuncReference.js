@@ -2,7 +2,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { Component } from 'react';
-import Person from './Person/Person';
+import Person from './Person/PersonRef';
 //import Gen from './GenieJSX'
 
 
@@ -56,7 +56,7 @@ import Person from './Person/Person';
 // Part 3.
 //MUA: state is keyword in React, holds the properties and their values.
 
-class App extends Component {
+class AppFuncReference extends Component {
   
   state = {
     persons: [
@@ -67,7 +67,7 @@ class App extends Component {
     otherState : 'some other state'
 }
 
-switchNameHandler = () => {
+switchNameHandler = (Newname) => {
   
   //console.log('Clicked');
   // DON'T DO THIS: this.state.persons[0].name = "Usman";
@@ -75,14 +75,36 @@ switchNameHandler = () => {
 
   this.setState({
     persons: [
-      {name:'Adnan Akhtar', age:10},
+      {name: Newname, age:10},
       {name: 'Humayun Asghar', age:20},
       {name: 'Usman Asghar', age:32}
   ]
   })
 }
 
+nameChangeHandler = (event) => {
+ 
+  this.setState({
+    persons: [
+      {name: 'Roham Usman', age:10},
+      {name: event.target.value, age:20},
+      {name: 'Usman Asghar', age:32}
+  ]
+  })
+}
+
   render(){
+
+    const mystyle = {
+      backgroundColor : 'white',
+      color : 'blue',
+      font : 'inherit',
+      fontSize : '14px',
+      border : '2px solid blue',
+      padding : '8px',
+      cursor : 'pointer'
+    };
+
     return (
       <div className="App">
 
@@ -93,11 +115,21 @@ switchNameHandler = () => {
           
           <p> Building up Codehub React App.</p>
           
-          <button onClick={this.switchNameHandler}>Update Name</button>
+          <button style={mystyle} onClick={this.switchNameHandler.bind(this, "Roham Usman")}>Update Name</button>
 
-          <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-          <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
-          <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>My Best Friend.</Person>
+          <Person 
+          name={this.state.persons[0].name} 
+          age={this.state.persons[0].age}/>
+          
+          <Person 
+          name={this.state.persons[1].name} 
+          age={this.state.persons[1].age}
+          click={this.switchNameHandler.bind(this, "Human")}
+          changed={this.nameChangeHandler}>My Hobbies : Racing</Person>
+
+          <Person 
+          name={this.state.persons[2].name} 
+          age={this.state.persons[2].age}>My Best Friend.</Person>
 
         </header>
 
@@ -109,4 +141,4 @@ switchNameHandler = () => {
 
 //MUA: Calling different component within current component.
 
-export default App;
+export default AppFuncReference;
